@@ -103,4 +103,5 @@ class Game:
             return p2.name
         else:
             return "引き分け！"
-
+game = Game()
+game.play_game()
