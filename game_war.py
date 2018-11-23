@@ -9,7 +9,7 @@ class Card:
 
     def __init__(self,v,s):
         self.value = v
-        self.suits = s
+        self.suit = s
 
     def __lt__(self,c2):
         if self.value < c2.value:
@@ -39,7 +39,7 @@ class Card:
 class Deck:
     def __init__(self):
         self.cards = []
-        for i in range(2.15):
+        for i in range(2,15):
             for j in range(4):
                 self.cards.append(Card(i,j))
         shuffle(self.cards)
@@ -63,7 +63,7 @@ class Game:
         self.p1 = Player(name1)
         self.p2 = Player(name2)
 
-    def wins(self,winnner):
+    def wins(self,winner):
         w = "このラウンドは{}が勝ちました！"
         w = w.format(winner)
         print(w)
@@ -94,7 +94,7 @@ class Game:
                 self.wins(self.p2.name)
                 
         win = self.winner(self.p1,self.p2)
-        print("ゲーム終了、{}　の終了です！".format(win))
+        print("ゲーム終了、{}　の勝利です！".format(win))
 
     def winner(self,p1,p2):
         if p1.wins > p2.wins:
